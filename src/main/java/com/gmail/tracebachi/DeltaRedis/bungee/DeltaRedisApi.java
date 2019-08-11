@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with DeltaRedis.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.gmail.tracebachi.DeltaRedis.Bungee;
+package com.gmail.tracebachi.DeltaRedis.bungee;
 
 import com.gmail.tracebachi.DeltaRedis.Shared.Cache.CachedPlayer;
 import com.gmail.tracebachi.DeltaRedis.Shared.DeltaRedisChannels;
@@ -28,8 +28,10 @@ import java.util.Set;
 /**
  * Created by Trace Bachi (tracebachi@gmail.com, BigBossZee) on 12/11/15.
  */
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class DeltaRedisApi
 {
+
     private static DeltaRedisApi instance;
 
     public static DeltaRedisApi instance()

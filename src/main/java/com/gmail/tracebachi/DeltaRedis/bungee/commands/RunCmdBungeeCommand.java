@@ -1,10 +1,10 @@
-package com.gmail.tracebachi.DeltaRedis.Bungee.Commands;
+package com.gmail.tracebachi.DeltaRedis.bungee.commands;
 
-import com.gmail.tracebachi.DeltaRedis.Bungee.DeltaRedis;
-import com.gmail.tracebachi.DeltaRedis.Bungee.DeltaRedisApi;
 import com.gmail.tracebachi.DeltaRedis.Shared.Registerable;
 import com.gmail.tracebachi.DeltaRedis.Shared.Servers;
 import com.gmail.tracebachi.DeltaRedis.Shared.Shutdownable;
+import com.gmail.tracebachi.DeltaRedis.bungee.DeltaRedis;
+import com.gmail.tracebachi.DeltaRedis.bungee.DeltaRedisApi;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.plugin.Command;
@@ -18,6 +18,7 @@ import static com.gmail.tracebachi.DeltaRedis.Shared.Prefixes.*;
 /**
  * Created by Trace Bachi (tracebachi@gmail.com, BigBossZee) on 4/28/16.
  */
+@SuppressWarnings("SpellCheckingInspection")
 public class RunCmdBungeeCommand extends Command implements Registerable, Shutdownable
 {
     private DeltaRedis plugin;
@@ -53,14 +54,14 @@ public class RunCmdBungeeCommand extends Command implements Registerable, Shutdo
     {
         if(!sender.hasPermission("DeltaRedis.RunCmd"))
         {
-            sender.sendMessage(FAILURE + "You do not have permission to run this command.");
+            sender.sendMessage(new TextComponent(FAILURE + "You do not have permission to run this command."));
             return;
         }
 
         if(args.length <= 1)
         {
-            sender.sendMessage(INFO + "/runcmd server[,server,...] command");
-            sender.sendMessage(INFO + "/runcmd ALL command");
+            sender.sendMessage(new TextComponent(INFO + "/runcmd server[,server,...] command"));
+            sender.sendMessage(new TextComponent(INFO + "/runcmd ALL command"));
             return;
         }
 
@@ -100,12 +101,10 @@ public class RunCmdBungeeCommand extends Command implements Registerable, Shutdo
         return String.join(" ", (CharSequence[]) Arrays.copyOfRange(args, 1, args.length));
     }
 
-    private boolean doesSetContain(Set<String> set, String source)
-    {
-        for(String item : set)
-        {
-            if(item.equalsIgnoreCase(source))
-            {
+    @SuppressWarnings("SameParameterValue")
+    private boolean doesSetContain(Set<String> set, String source) {
+        for(String item : set) {
+            if(item.equalsIgnoreCase(source)) {
                 return true;
             }
         }

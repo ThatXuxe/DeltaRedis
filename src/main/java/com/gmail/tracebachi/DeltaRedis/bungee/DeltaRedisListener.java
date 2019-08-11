@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with DeltaRedis.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.gmail.tracebachi.DeltaRedis.Bungee;
+package com.gmail.tracebachi.DeltaRedis.bungee;
 
 import com.gmail.tracebachi.DeltaRedis.Shared.DeltaRedisChannels;
 import com.gmail.tracebachi.DeltaRedis.Shared.Registerable;
@@ -36,6 +36,7 @@ import static com.gmail.tracebachi.DeltaRedis.Shared.SplitPatterns.DELTA;
 /**
  * Created by Trace Bachi (tracebachi@gmail.com, BigBossZee) on 11/29/15.
  */
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class DeltaRedisListener implements Listener, Registerable, Shutdownable
 {
     private final String bungeeName;
@@ -43,13 +44,12 @@ public class DeltaRedisListener implements Listener, Registerable, Shutdownable
     private HashSet<String> onlinePlayers = new HashSet<>(64);
     private DeltaRedis plugin;
 
-    public DeltaRedisListener(StatefulRedisConnection<String, String> connection, DeltaRedis plugin)
-    {
+    @SuppressWarnings("WeakerAccess")
+    public DeltaRedisListener(StatefulRedisConnection<String, String> connection, DeltaRedis plugin) {
         this.connection = connection;
         this.plugin = plugin;
         this.bungeeName = plugin.getBungeeName();
     }
-
     @Override
     public void register()
     {
@@ -66,7 +66,6 @@ public class DeltaRedisListener implements Listener, Registerable, Shutdownable
     public void shutdown()
     {
         plugin.debug("DeltaRedisListener.shutdown()");
-
         // Remove all players currently online from Redis
         for(ProxiedPlayer player : BungeeCord.getInstance().getPlayers())
         {

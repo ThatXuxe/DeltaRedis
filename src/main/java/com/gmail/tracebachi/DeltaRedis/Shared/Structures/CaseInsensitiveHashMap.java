@@ -26,6 +26,7 @@ import java.util.function.Function;
 /**
  * Created by Trace Bachi (tracebachi@gmail.com, BigBossZee) on 1/22/16.
  */
+@SuppressWarnings("unused")
 public class CaseInsensitiveHashMap<V> extends HashMap<String, V>
 {
     public CaseInsensitiveHashMap()

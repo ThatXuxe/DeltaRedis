@@ -24,6 +24,7 @@ import java.util.HashSet;
 /**
  * Created by Trace Bachi (tracebachi@gmail.com, BigBossZee) on 1/22/16.
  */
+@SuppressWarnings("unused")
 public class CaseInsensitiveHashSet extends HashSet<String>
 {
     public CaseInsensitiveHashSet()

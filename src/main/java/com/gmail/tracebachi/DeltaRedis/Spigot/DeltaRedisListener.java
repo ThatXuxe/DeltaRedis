@@ -31,6 +31,7 @@ import static com.gmail.tracebachi.DeltaRedis.Shared.SplitPatterns.NEWLINE;
 /**
  * Created by Trace Bachi (tracebachi@gmail.com) on 10/18/15.
  */
+@SuppressWarnings({"WeakerAccess", "unused"})
 public class DeltaRedisListener implements Listener, Registerable, Shutdownable
 {
     private DeltaRedis plugin;

@@ -25,6 +25,7 @@ import java.util.Map;
 /**
  * Created by Trace Bachi (tracebachi@gmail.com) on 10/18/15.
  */
+@SuppressWarnings("unused")
 public class MapCache<K, V extends Cacheable>
 {
     private final long invalidValueTime;

@@ -23,6 +23,7 @@ import org.bukkit.event.HandlerList;
 /**
  * Created by Trace Bachi (tracebachi@gmail.com) on 10/18/15.
  */
+@SuppressWarnings("unused")
 public class DeltaRedisMessageEvent extends Event
 {
     private static final HandlerList handlers = new HandlerList();

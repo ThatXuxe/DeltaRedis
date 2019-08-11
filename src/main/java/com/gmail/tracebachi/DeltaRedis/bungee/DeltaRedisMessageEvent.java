@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with DeltaRedis.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.gmail.tracebachi.DeltaRedis.Bungee;
+package com.gmail.tracebachi.DeltaRedis.bungee;
 
 import com.google.common.base.Preconditions;
 import net.md_5.bungee.api.plugin.Event;
@@ -22,6 +22,7 @@ import net.md_5.bungee.api.plugin.Event;
 /**
  * Created by Trace Bachi (tracebachi@gmail.com) on 10/18/15.
  */
+@SuppressWarnings("WeakerAccess")
 public class DeltaRedisMessageEvent extends Event
 {
     private final String sendingServer;

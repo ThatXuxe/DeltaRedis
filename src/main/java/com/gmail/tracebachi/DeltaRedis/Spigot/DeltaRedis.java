@@ -124,9 +124,9 @@ public class DeltaRedis extends JavaPlugin implements DeltaRedisInterface
             }, 20, updatePeriod);
     }
 
+    @SuppressWarnings("Duplicates")
     @Override
-    public void onDisable()
-    {
+    public void onDisable() {
         getServer().getScheduler().cancelTasks(this);
 
         runCmdCommand.shutdown();

@@ -30,6 +30,7 @@ import java.util.Set;
 /**
  * Created by Trace Bachi (tracebachi@gmail.com, BigBossZee) on 12/11/15.
  */
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class DeltaRedisApi
 {
     private static DeltaRedisApi instance;

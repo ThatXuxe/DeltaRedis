@@ -16,7 +16,7 @@ RedisServer:
 
 # Name of the BungeeCord instance to which the server belongs.
 # From the example, this should be set to 'MrRoboto'.
-BungeeName: Bungee
+BungeeName: bungee
 
 # Exact name of the server as listed in the BungeeCord config.
 # This name is case-sensitive! Please double check to make sure it is correct.

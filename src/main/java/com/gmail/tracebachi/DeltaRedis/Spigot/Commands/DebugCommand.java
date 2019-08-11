@@ -23,6 +23,8 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
+import java.util.Objects;
+
 import static com.gmail.tracebachi.DeltaRedis.Shared.Prefixes.*;
 
 /**
@@ -40,13 +42,13 @@ public class DebugCommand implements CommandExecutor, Registerable, Shutdownable
     @Override
     public void register()
     {
-        plugin.getCommand("deltaredisdebug").setExecutor(this);
+        Objects.requireNonNull(plugin.getCommand("deltaredisdebug")).setExecutor(this);
     }
 
     @Override
     public void unregister()
     {
-        plugin.getCommand("deltaredisdebug").setExecutor(null);
+        Objects.requireNonNull(plugin.getCommand("deltaredisdebug")).setExecutor(null);
     }
 
     @Override

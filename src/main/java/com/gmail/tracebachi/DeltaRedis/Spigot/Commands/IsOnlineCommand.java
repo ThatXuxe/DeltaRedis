@@ -26,11 +26,14 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import java.util.Objects;
+
 import static com.gmail.tracebachi.DeltaRedis.Shared.Prefixes.*;
 
 /**
  * Created by Trace Bachi (tracebachi@gmail.com, BigBossZee) on 11/28/15.
  */
+@SuppressWarnings("SpellCheckingInspection")
 public class IsOnlineCommand implements CommandExecutor, Registerable, Shutdownable
 {
     private DeltaRedis plugin;
@@ -43,13 +46,13 @@ public class IsOnlineCommand implements CommandExecutor, Registerable, Shutdowna
     @Override
     public void register()
     {
-        plugin.getCommand("isonline").setExecutor(this);
+        Objects.requireNonNull(plugin.getCommand("isonline")).setExecutor(this);
     }
 
     @Override
     public void unregister()
     {
-        plugin.getCommand("isonline").setExecutor(null);
+        Objects.requireNonNull(plugin.getCommand("isonline")).setExecutor(null);
     }
 
     @Override
@@ -103,7 +106,7 @@ public class IsOnlineCommand implements CommandExecutor, Registerable, Shutdowna
         else
         {
             Player player = Bukkit.getPlayerExact(name);
-            player.sendMessage(message);
+            Objects.requireNonNull(player).sendMessage(message);
         }
     }
 }

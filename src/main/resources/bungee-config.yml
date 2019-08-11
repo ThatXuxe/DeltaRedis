@@ -16,7 +16,7 @@ RedisServer:
 
 # Name of this BungeeCord instance
 # From the example, this should be set to 'MrRoboto'.
-BungeeName: Bungee
+BungeeName: bungee
 
 # Used for debugging DeltaRedis
 DebugMode: True

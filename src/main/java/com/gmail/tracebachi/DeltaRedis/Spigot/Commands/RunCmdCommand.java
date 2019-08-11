@@ -33,6 +33,7 @@ import org.bukkit.event.Listener;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 import static com.gmail.tracebachi.DeltaRedis.Shared.Prefixes.*;
@@ -41,6 +42,7 @@ import static com.gmail.tracebachi.DeltaRedis.Shared.SplitPatterns.DELTA;
 /**
  * Created by Trace Bachi (tracebachi@gmail.com, BigBossZee) on 11/28/15.
  */
+@SuppressWarnings("unused")
 public class RunCmdCommand implements CommandExecutor, Listener, Registerable, Shutdownable
 {
     private DeltaRedis plugin;
@@ -53,14 +55,14 @@ public class RunCmdCommand implements CommandExecutor, Listener, Registerable, S
     @Override
     public void register()
     {
-        plugin.getCommand("runcmd").setExecutor(this);
+        Objects.requireNonNull(plugin.getCommand("runcmd")).setExecutor(this);
         plugin.getServer().getPluginManager().registerEvents(this, plugin);
     }
 
     @Override
     public void unregister()
     {
-        plugin.getCommand("runcmd").setExecutor(null);
+        Objects.requireNonNull(plugin.getCommand("runcmd")).setExecutor(null);
 
         HandlerList.unregisterAll(this);
     }

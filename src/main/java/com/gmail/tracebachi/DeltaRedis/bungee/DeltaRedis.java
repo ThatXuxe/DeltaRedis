@@ -14,13 +14,13 @@
  * You should have received a copy of the GNU General Public License
  * along with DeltaRedis.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.gmail.tracebachi.DeltaRedis.Bungee;
+package com.gmail.tracebachi.DeltaRedis.bungee;
 
-import com.gmail.tracebachi.DeltaRedis.Bungee.Commands.RunCmdBungeeCommand;
 import com.gmail.tracebachi.DeltaRedis.Shared.DeltaRedisInterface;
 import com.gmail.tracebachi.DeltaRedis.Shared.Redis.DRCommandSender;
 import com.gmail.tracebachi.DeltaRedis.Shared.Redis.DRPubSubListener;
 import com.gmail.tracebachi.DeltaRedis.Shared.Servers;
+import com.gmail.tracebachi.DeltaRedis.bungee.commands.RunCmdBungeeCommand;
 import com.google.common.base.Preconditions;
 import com.lambdaworks.redis.ClientOptions;
 import com.lambdaworks.redis.RedisClient;
@@ -116,9 +116,9 @@ public class DeltaRedis extends Plugin implements DeltaRedisInterface
         }, 1, 1, TimeUnit.SECONDS);
     }
 
+    @SuppressWarnings("Duplicates")
     @Override
-    public void onDisable()
-    {
+    public void onDisable() {
         runCmdBungeeCommand.shutdown();
         runCmdBungeeCommand = null;
 
